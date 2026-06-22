@@ -56,7 +56,7 @@ def generate_strict_title(client, current_title, page_content, url):
         """
         try:
             response = client.models.generate_content(
-                model='gemini-2.5-flash',
+                model='gemini-3.1-flash-lite',
                 contents=prompt,
             )
             suggested_title = response.text.strip().replace('"', '')
