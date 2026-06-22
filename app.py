@@ -49,10 +49,10 @@ def generate_strict_title(client, current_title, page_content, url):
         Page Content Snippet: "{page_content}"
         
         CRITICAL RULES:
-        1. The new title MUST be between 50 and 60 characters long (including spaces).
-        2. Count the characters carefully before outputting.
-        3. Do not include your character count in the output.
-        4. Return ONLY the new title text. No quotation marks, no intro text.
+        1. Evaluate the Current Title against the Page Content. If the current title is semantically appropriate, optimize it to fit the length constraints. If it is poor or irrelevant, write a completely new one based on the Page Content.
+        2. The new title MUST be strictly between 50 and 60 characters long (including spaces).
+        3. Count the characters carefully before outputting.
+        4. Return ONLY the new title text. No quotation marks, no intro text, no character counts.
         """
         try:
             response = client.models.generate_content(
